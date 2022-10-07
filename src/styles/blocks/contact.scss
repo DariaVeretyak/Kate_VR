@@ -65,6 +65,8 @@
     border: none;
     border-bottom: 1px solid $dark-grey;
     outline: none;
+    resize: none;
+    color: $text-color;
   }
 
   &__contacts {

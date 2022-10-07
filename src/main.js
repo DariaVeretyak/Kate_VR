@@ -1,5 +1,7 @@
 'use strict';
 
+const bodyPage = document.querySelector('.page');
+
 // language select //
 const headerLang = document.querySelector('.select__header--header');
 const activeLang = document.querySelector('.select__current--header');
@@ -18,11 +20,13 @@ function removeItemsClass(arr) {
 function menuActivate(page) {
   page.classList.add('menu-page--active');
   wrapper.classList.add('page__wrapper--background');
+  bodyPage.classList.add('page__no-scroll');
 }
 
 function menuReactivate(page) {
   page.classList.remove('menu-page--active');
   wrapper.classList.remove('page__wrapper--background');
+  bodyPage.classList.remove('page__no-scroll');
 }
 
 headerLang.addEventListener('click', (ev) => {
@@ -177,6 +181,7 @@ const orderClose = document.querySelector('.menu__close--order');
 function ordering() {
   orderPage.classList.add('order--active');
   wrapper.classList.add('page__wrapper--background');
+  bodyPage.classList.add('page__no-scroll');
 }
 
 headerBuy.addEventListener('click', (ev) => {
@@ -195,6 +200,7 @@ benefitsBuy.addEventListener('click', (ev) => {
 orderClose.addEventListener('click', (ev) => {
   orderPage.classList.remove('order--active');
   wrapper.classList.remove('page__wrapper--background');
+  bodyPage.classList.remove('page__no-scroll');
 });
 
 // order select //
@@ -247,9 +253,9 @@ bodyCity.addEventListener('click', (ev) => {
 const headerQuantity = document.querySelector(
   '.select__header--order-quantity'
 );
-const allQuantity = [ ...document.querySelectorAll(
+const allQuantity = document.querySelectorAll(
   '.select__item--quantity'
-) ];
+);
 const activeQuantity = document.querySelector(
   '.select__current--order-quantity'
 );
@@ -491,6 +497,7 @@ payForm.addEventListener('submit', (ev) => {
       orderPhases[2].setAttribute('disabled', 'disabled');
       placeForm.reset();
       payForm.reset();
+      bodyPage.classList.remove('page__no-scroll');
     }, 3000);
   }
 });

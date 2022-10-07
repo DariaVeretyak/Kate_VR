@@ -5,10 +5,10 @@
     position: relative;
     top: -$headerHeight;
     @include flex-column;
-    justify-content: space-between;
+    justify-content: space-around;
     background: $background-gradient;
     z-index: 10;
-    padding: 65px 0;
+    height: 100vh;
 
     @include tablet {
       top: -$headerHeight-tablet;

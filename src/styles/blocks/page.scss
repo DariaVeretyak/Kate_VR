@@ -182,6 +182,10 @@ button {
       @include scroll-appearance;
     }
   }
+
+  &__no-scroll {
+    overflow: hidden;
+  }
 }
 
 // параметри для скрол //

@@ -1,18 +1,21 @@
 .menu-page {
   display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
 
   &--active {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    height: 100vh;
     display: block;
     width: 100%;
     box-sizing: border-box;
-    height: max-content;
     background-color: $dark-blue;
     overflow: hidden;
     z-index: 20;
+    opacity: 1;
 
     @include tablet {
       top: -$headerHeight-tablet;

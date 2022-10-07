@@ -2,6 +2,11 @@
   position: relative;
   @include flex-column;
 
+  @include onDesktop {
+    height: 80vh;
+    box-sizing: border-box;
+  }
+
   @include full {
     padding-top: 60px;
   }
